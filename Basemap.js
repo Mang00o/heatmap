@@ -1,4 +1,9 @@
-var latLngSpazioDev = L.latLng(45.622198, 11.839179);
+//definiamo le variabili latitudine e longitudine per alcune citta'
+var latLngPadova = L.latLng(45.406434, 11.876761);
+var latLngVenezia = L.latLng(45.440847, 12.315515);
+var latLngVicenza = L.latLng(45.545479, 11.535421);
+var latLngTreviso = L.latLng(45.666916, 12.243065);
+var latLngSpazioDev = L.latLng(45.622198, 11.839179); // Coordinate di SpazioDev
 
 /******** DEFINIAMO DUE LIVELLI ********/
 //primo livello base
@@ -8,14 +13,15 @@ var baseMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 });
 
 //secondo livello overlay
-//definisce marker in 4 citta'
-var littleton = L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.'),
-    denver    = L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.'),
-    aurora    = L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.'),
-    golden    = L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.');
+//definisce marker delle citta''
+var padova  = L.marker(latLngPadova).bindPopup('This is Padova, Italy.'),
+    venezia = L.marker(latLngVenezia).bindPopup('This is Venezia, Italy.'),
+    vicenza = L.marker(latLngVicenza).bindPopup('This is Vicenza, Italy.'),
+    treviso = L.marker(latLngTreviso).bindPopup('This is Treviso, Italy.'),
+    spaziodev = L.marker(latLngSpazioDev).bindPopup('This is SpazioDev.');
 
 //aggiunge i marker ad un layer cities
-var cities = L.layerGroup([littleton, denver, aurora, golden]);
+var cities = L.layerGroup([padova, venezia, vicenza, treviso, spaziodev]);
 
 /******** DEFINIAMO LA MAPPA ********/
 //dichiariamo la mappa
